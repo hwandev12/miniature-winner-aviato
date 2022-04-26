@@ -25,13 +25,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
 </head>
 
+<!--========== Navigation Starts ==========-->
 {% include 'includes/navigation.html' %}
+<!--========== Navigation Starts ==========-->
 
-<body>
+<body id="body">>
   {% block content %}
 
   {% endblock content %}
+
+  <!--========== Footer Starts ==========-->
   {% include 'includes/footer.html' %}
+  <!--========== Footer Starts ==========-->
 
   <!-- Main jQuery -->
   <script src="{% static 'plugins/jquery/dist/jquery.min.js' %}"></script>
