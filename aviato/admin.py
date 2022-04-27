@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import MainHomePageImages
+from .models import CarouselImages
 
-admin.site.register(MainHomePageImages)
+admin.site.register(CarouselImages)
