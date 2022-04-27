@@ -17,3 +17,7 @@ class AboutPageView(TemplateView):
 
 class DashboardPageView(TemplateView):
     template_name = 'pages/dashboard.html'
+
+
+class OrdersPageView(TemplateView):
+    template_name = 'pages/orders.html'
