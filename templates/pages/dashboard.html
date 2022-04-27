@@ -24,15 +24,15 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="list-inline dashboard-menu text-center">
-          <li><a class="active" href="dashboard.html">Dashboard</a></li>
-          <li><a href="order.html">Orders</a></li>
+          <li><a class="active" href="{% url 'aviato:dashboard' %}">Dashboard</a></li>
+          <li><a href="{% url 'aviato:order' %}">Orders</a></li>
           <li><a href="address.html">Address</a></li>
           <li><a href="profile-details.html">Profile Details</a></li>
         </ul>
         <div class="dashboard-wrapper user-dashboard">
           <div class="media">
             <div class="pull-left">
-              <img class="media-object user-img" src="images/avater.jpg" alt="Image">
+              <img class="media-object user-img" src="{% static 'images/avater.jpg' %}" alt="Image">
             </div>
             <div class="media-body">
               <h2 class="media-heading">Welcome Adam Smith</h2>
