@@ -1,10 +1,14 @@
+from .models import CarouselImages
 from django.views.generic import (
     TemplateView,
+    ListView
 )
 
 
-class HomeView(TemplateView):
+class HomeView(ListView):
     template_name = 'pages/home.html'
+    queryset = CarouselImages.objects.all()
+    context_object_name = 'images'
 
 
 class BlogPageView(TemplateView):
