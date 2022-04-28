@@ -223,6 +223,9 @@
               <li><a href="typography.html">Typography</a></li>
               <li><a href="buttons.html">Buttons</a></li>
               <li><a href="alerts.html">Alerts</a></li>
+              {% if request.user.is_organiser %}
+              <li><a href="{% url 'display:display' %}">Display Change</a></li>
+              {% endif %}
             </ul>
           </li><!-- / Blog -->
         </ul><!-- / .nav .navbar-nav -->
