@@ -1,66 +1,84 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Main page</title>
 
-<head>
-  <meta charset="utf-8">
-  <title>Main page</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'images/favicon.png' %}"
+    />
+    <!-- Themefisher Icon font -->
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/themefisher-font/style.css' %}"
+    />
+    <!-- bootstrap.min css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Animate css -->
+    <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}" />
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/slick/slick-theme.css' %}"
+    />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" />
-  <!-- Themefisher Icon font -->
-  <link rel="stylesheet" href="{% static 'plugins/themefisher-font/style.css' %}">
-  <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <!-- Animate css -->
-  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
-  <!-- Slick Carousel -->
-  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
-  <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %}">
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
-</head>
+  <!--========== Navigation Starts ==========-->
+  {% include 'includes/navigation.html' %}
+  <!--========== Navigation Starts ==========-->
 
-<!--========== Navigation Starts ==========-->
-{% include 'includes/navigation.html' %}
-<!--========== Navigation Starts ==========-->
+  <body id="body">
+    {% block content %}
+    {% endblock content %}
 
-<body id="body">>
-  {% block content %}
+    <!--========== Footer Starts ==========-->
+    {% include 'includes/footer.html' %}
+    <!--========== Footer Starts ==========-->
 
-  {% endblock content %}
+    <!-- Main jQuery -->
+    <script src="{% static 'plugins/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap 3.1 -->
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- Bootstrap Touchpin -->
+    <script src="{% static 'plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js' %}"></script>
+    <!-- Instagram Feed Js -->
+    <script src="{% static 'plugins/instafeed/instafeed.min.js' %}"></script>
+    <!-- Video Lightbox Plugin -->
+    <script src="{% static 'plugins/ekko-lightbox/dist/ekko-lightbox.min.js' %}"></script>
+    <!-- Count Down Js -->
+    <script src="{% static 'plugins/syo-timer/build/jquery.syotimer.min.js' %}"></script>
 
-  <!--========== Footer Starts ==========-->
-  {% include 'includes/footer.html' %}
-  <!--========== Footer Starts ==========-->
+    <!-- slick Carousel -->
+    <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+    <script src="{% static 'plugins/slick/slick-animation.min.js' %}"></script>
 
-  <!-- Main jQuery -->
-  <script src="{% static 'plugins/jquery/dist/jquery.min.js' %}"></script>
-  <!-- Bootstrap 3.1 -->
-  <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-  <!-- Bootstrap Touchpin -->
-  <script src="{% static 'plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js' %}"></script>
-  <!-- Instagram Feed Js -->
-  <script src="{% static 'plugins/instafeed/instafeed.min.js' %}"></script>
-  <!-- Video Lightbox Plugin -->
-  <script src="{% static 'plugins/ekko-lightbox/dist/ekko-lightbox.min.js' %}"></script>
-  <!-- Count Down Js -->
-  <script src="{% static 'plugins/syo-timer/build/jquery.syotimer.min.js' %}"></script>
+    <!-- Google Mapl -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script type="text/javascript" src="{% static 'plugins/google-map/gmap.js' %}"></script>
 
-  <!-- slick Carousel -->
-  <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
-  <script src="{% static 'plugins/slick/slick-animation.min.js' %}"></script>
-
-  <!-- Google Mapl -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-  <script type="text/javascript" src="plugins/google-map/gmap.js"></script>
-
-  <!-- Main Js File -->
-  <script src="{% static 'js/script.js' %}"></script>
-</body>
-
+    <!-- Main Js File -->
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
 </html>
