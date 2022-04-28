@@ -1,4 +1,4 @@
-from .models import CarouselImages
+from .models import CarouselImages, Logo
 from django.views.generic import (
     TemplateView,
     ListView
@@ -7,8 +7,18 @@ from django.views.generic import (
 
 class HomeView(ListView):
     template_name = 'pages/home.html'
-    queryset = CarouselImages.objects.all()
-    context_object_name = 'images'
+
+
+    # it is for multiple context objects
+    def get_queryset(self):
+        return Logo.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        # here we can add so many context using that way
+        context['images'] = CarouselImages.objects.all()
+        context['logos'] = Logo.objects.all()
+        return context
 
 
 class BlogPageView(TemplateView):
