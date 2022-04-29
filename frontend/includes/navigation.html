@@ -9,15 +9,17 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-xs-12 col-sm-4">
+        {% for number in logos %}
         <div class="contact-number">
           <i class="tf-ion-ios-telephone"></i>
-          <span>+99893 106-56-07</span>
+          <span>{{ number.phone }}</span>
         </div>
+        {% endfor %}
       </div>
       <div class="col-md-4 col-xs-12 col-sm-4">
         <!-- Site Logo -->
         <div class="logo text-center">
-          <a href="index.html">
+          <a href="{% url 'aviato:home' %}">
             <!-- replace logo here -->
             {% for logo in logos %}
             <svg width="135px" height="49px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
