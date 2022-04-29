@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
@@ -15,13 +16,14 @@ class UserProfile(models.Model):
         return str(self.user.username)
 
 
-class Logo(models.Model):
+class Header(models.Model):
     class Meta:
-        verbose_name = 'Logo'
-        verbose_name_plural = 'Logo '
-
+        verbose_name = 'Header'
+        verbose_name_plural = 'Header'
+        
+    phone = models.IntegerField(default=998)
     logo = models.CharField(max_length=100)
-
+    
     def __str__(self):
         return self.logo
 
