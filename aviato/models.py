@@ -35,6 +35,7 @@ class CarouselImages(models.Model):
 
     paragraph = models.CharField(max_length=60)
     menu = models.TextField(max_length=200)
+    button = models.CharField(max_length=60)
     carousel_img = models.ImageField(blank=True, null=True)
     organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     agent = models.ForeignKey(
