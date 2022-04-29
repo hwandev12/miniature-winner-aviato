@@ -33,14 +33,15 @@ class CarouselImages(models.Model):
         verbose_name = 'Carousel'
         verbose_name_plural = 'Carousel Images'
 
-    text = models.CharField(max_length=60)
+    paragraph = models.CharField(max_length=60)
+    menu = models.TextField(max_length=200)
     carousel_img = models.ImageField(blank=True, null=True)
     organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     agent = models.ForeignKey(
         "Agent", null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.text
+        return self.paragraph
 
 
 # agent class here
@@ -49,6 +50,7 @@ class Agent(models.Model):
     organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
 
+# That is actually for userprofile when created a user in the website or signed up
 def post_save_model(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
