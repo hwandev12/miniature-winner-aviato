@@ -82,6 +82,17 @@ class TrendyProducts(models.Model):
         return self.trendy_products_type
 
 
+class SubscribeNewpaperModel(models.Model):
+    class Meta:
+        verbose_name = 'Subscribe Newspaper'
+        verbose_name_plural = 'Subscribe Newspaper'
+        
+    subscribe_newspaper_header = models.CharField(max_length=200, blank=True)
+    subscribe_newspaper_text = models.TextField(max_length=350, blank=True)
+    
+    def __str__(self):
+        return self.subscribe_newspaper_header
+
 class TrendyProductsCategory(models.Model):
     class Meta:
         verbose_name = 'Trendy Category'
