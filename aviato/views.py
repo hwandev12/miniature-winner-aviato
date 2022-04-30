@@ -22,6 +22,7 @@ class HomeView(ListView):
         context['products'] = ProductCategory.objects.all()
         context['categories'] = ProductSingleCategory.objects.all()
         context['trendy_products'] = TrendyProducts.objects.all()
+        context['trendy_products_categories'] = TrendyProductsCategory.objects.all()
         return context
 
 
