@@ -123,21 +123,17 @@
 <!--
 Start Call To Action
 ==================================== -->
+{% for newspaper in subscribe_newspapers %}
 <section class="call-to-action bg-gray section">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <div class="title">
-          <h2>SUBSCRIBE TO NEWSLETTER</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat,
-            <br />
-            facilis numquam impedit ut sequi. Minus facilis vitae excepturi sit
-            laboriosam.
-          </p>
+        <div class="title" style="width: 550px; margin: 4px auto;">
+          <h2 class="mb-4">{{ newspaper.subscribe_newspaper_header }}</h2>
+          <p>{{ newspaper.subscribe_newspaper_text }}</p>
         </div>
-        <div class="col-lg-6 col-md-offset-3">
-          <div class="input-group subscription-form">
+        <div class="col-lg-6 col-md-offset-3" style="margin-left: 180px;">
+          <div class="input-group subscription-form" style="width: 400px; margin: 0 auto;">
             <input
               type="text"
               class="form-control"
@@ -157,6 +153,7 @@ Start Call To Action
   <!-- End container -->
 </section>
 <!-- End section -->
+{% endfor %}
 
 <section class="section instagram-feed">
   <div class="container">
