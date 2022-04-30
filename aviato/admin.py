@@ -7,6 +7,7 @@ from .models import (
     ProductCategory,
     ProductSingleCategory,
     TrendyProducts,
+    TrendyProductsCategory,
     User
 )
 
@@ -20,6 +21,7 @@ admin.site.register(ProductCategory)
 admin.site.register(ProductSingleCategory)
 # import trendy products
 admin.site.register(TrendyProducts)
+admin.site.register(TrendyProductsCategory)
 
 
 # import basic agent and userprofiles
