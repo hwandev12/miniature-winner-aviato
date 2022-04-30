@@ -5,6 +5,7 @@ from .models import (
     UserProfile,
     Agent,
     ProductCategory,
+    ProductSingleCategory,
     User
 )
 
@@ -15,6 +16,7 @@ admin.site.register(CarouselImages)
 admin.site.register(Header)
 # import product category
 admin.site.register(ProductCategory)
+admin.site.register(ProductSingleCategory)
 
 
 # import basic agent and userprofiles
