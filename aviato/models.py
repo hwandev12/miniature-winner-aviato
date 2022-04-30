@@ -53,8 +53,11 @@ class ProductCategory(models.Model):
     product_category_box_head = models.CharField(max_length=150)
     product_category_box_text = models.CharField(max_length=200)
     product_category_box_carousel = models.ImageField(blank=False)
+    organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    agent = models.ForeignKey(
+        'Agent', null=True, blank=True, on_delete=models.SET_NULL)
     category_model = models.ForeignKey(
-        'ProductSingleCategory', blank=False, related_name='category', on_delete=models.CASCADE)
+        'ProductSingleCategory', blank=False, related_name='category', null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.product_category_box_head
@@ -71,7 +74,8 @@ class TrendyProducts(models.Model):
     trendy_products_cost = models.IntegerField(default=30, blank=False)
     trendy_products_sale = models.CharField(max_length=80, blank=True)
     trendy_products_image = models.ImageField(blank=False)
-    
+    organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+
     def __str__(self):
         return self.trendy_products_type
 
@@ -82,6 +86,7 @@ class ProductSingleCategory(models.Model):
         verbose_name_plural = 'Product Category Model'
 
     product_category_model = models.CharField(max_length=150)
+    organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.product_category_model
@@ -92,8 +97,12 @@ class Agent(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return str(self.user)
 
 # That is actually for userprofile when created a user in the website or signed up
+
+
 def post_save_model(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)

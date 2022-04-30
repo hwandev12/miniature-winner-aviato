@@ -14,6 +14,7 @@ class HomeView(ListView):
         return Header.objects.all()
 
     def get_context_data(self, **kwargs):
+        user = self.request.user
         context = super(HomeView, self).get_context_data(**kwargs)
         # here we can add so many context using that way
         context['images'] = CarouselImages.objects.all()
