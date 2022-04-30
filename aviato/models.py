@@ -59,6 +59,22 @@ class ProductCategory(models.Model):
     def __str__(self):
         return self.product_category_box_head
 
+# trendy products
+
+
+class TrendyProducts(models.Model):
+    class Meta:
+        verbose_name = 'Trendy Products'
+        verbose_name_plural = 'Trendy Products'
+
+    trendy_products_type = models.CharField(max_length=200, blank=False)
+    trendy_products_cost = models.IntegerField(default=30, blank=False)
+    trendy_products_sale = models.CharField(max_length=80, blank=True)
+    trendy_products_image = models.ImageField(blank=False)
+    
+    def __str__(self):
+        return self.trendy_products_type
+
 
 class ProductSingleCategory(models.Model):
     class Meta:
@@ -68,11 +84,10 @@ class ProductSingleCategory(models.Model):
     product_category_model = models.CharField(max_length=150)
 
     def __str__(self):
-        return self.category_name
+        return self.product_category_model
+
 
 # agent class here
-
-
 class Agent(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)

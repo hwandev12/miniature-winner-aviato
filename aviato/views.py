@@ -19,7 +19,8 @@ class HomeView(ListView):
         context['images'] = CarouselImages.objects.all()
         context['logos'] = Header.objects.all()
         context['products'] = ProductCategory.objects.all()
-        context['category'] = ProductSingleCategory.objects.all()
+        context['categories'] = ProductSingleCategory.objects.all()
+        context['trendy_products'] = TrendyProducts.objects.all()
         return context
 
 
