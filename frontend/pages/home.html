@@ -40,7 +40,7 @@
   {% endfor %}
 </div>
 
-{% for category in category %}
+{% for category in categories %}
 <section class="product-category section">
   <div class="container">
     <div class="row">
@@ -74,17 +74,18 @@
   <div class="container">
     <div class="row">
       <div class="title text-center">
-        <h2>Trendy Products</h2>
+        <h2></h2>
       </div>
     </div>
     <div class="row">
+      {% for trend in trendy_products %}
       <div class="col-md-4">
         <div class="product-item">
           <div class="product-thumb">
             <span class="bage">Sale</span>
             <img
               class="img-responsive"
-              src="{% static 'images/shop/products/product-1.jpg' %}"
+              src="{{ trend.trendy_products_image.url }}"
               alt="product-img"
             />
             <div class="preview-meta">
@@ -104,11 +105,12 @@
             </div>
           </div>
           <div class="product-content">
-            <h4><a href="product-single.html">Reef Boardsport</a></h4>
-            <p class="price">$200</p>
+            <h4><a href="product-single.html">{{ trend.trendy_products_type }}</a></h4>
+            <p class="price">${{ trend.trendy_products_cost }}</p>
           </div>
         </div>
       </div>
+      {% endfor %}
       <div class="col-md-4">
         <div class="product-item">
           <div class="product-thumb">
