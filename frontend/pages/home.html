@@ -71,11 +71,12 @@
 </section>
 
 
+{% for trendy_category in trendy_products_categories %}
 <section class="products section bg-gray">
   <div class="container">
     <div class="row">
       <div class="title text-center">
-        <h2></h2>
+        <h2>{{ trendy_category.trendy_products_category }}</h2>
       </div>
     </div>
     <div class="row">
@@ -116,6 +117,7 @@
     </div>
   </div>
 </section>
+{% endfor %}
 
 
 <!--
