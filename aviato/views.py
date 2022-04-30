@@ -1,4 +1,4 @@
-from .models import CarouselImages, Header
+from .models import CarouselImages, Header, ProductCategory
 from django.views.generic import (
     TemplateView,
     ListView
@@ -18,6 +18,7 @@ class HomeView(ListView):
         # here we can add so many context using that way
         context['images'] = CarouselImages.objects.all()
         context['logos'] = Header.objects.all()
+        context['products'] = ProductCategory.objects.all()
         return context
 
 
