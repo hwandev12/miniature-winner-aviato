@@ -50,14 +50,25 @@ class ProductCategory(models.Model):
         verbose_name = 'Product Category'
         verbose_name_plural = 'Product Category'
 
-    product_category_paragraph = models.CharField(
-        max_length=200, blank=True)
     product_category_box_head = models.CharField(max_length=150)
     product_category_box_text = models.CharField(max_length=200)
     product_category_box_carousel = models.ImageField(blank=False)
+    category_model = models.ForeignKey(
+        'ProductSingleCategory', blank=False, related_name='category', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.product_category_box_head
+
+
+class ProductSingleCategory(models.Model):
+    class Meta:
+        verbose_name = 'Product Category Model'
+        verbose_name_plural = 'Product Category Model'
+
+    category_name = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.category_name
 
 # agent class here
 
