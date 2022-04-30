@@ -1,4 +1,4 @@
-from .models import CarouselImages, Header, ProductCategory
+from .models import *
 from django.views.generic import (
     TemplateView,
     ListView
@@ -19,6 +19,7 @@ class HomeView(ListView):
         context['images'] = CarouselImages.objects.all()
         context['logos'] = Header.objects.all()
         context['products'] = ProductCategory.objects.all()
+        context['category'] = ProductSingleCategory.objects.all()
         return context
 
 
