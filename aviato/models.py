@@ -20,10 +20,10 @@ class Header(models.Model):
     class Meta:
         verbose_name = 'Header'
         verbose_name_plural = 'Header'
-        
+
     phone = models.IntegerField(default=998)
     logo = models.CharField(max_length=100)
-    
+
     def __str__(self):
         return self.logo
 
@@ -45,7 +45,23 @@ class CarouselImages(models.Model):
         return self.paragraph
 
 
+class ProductCategory(models.Model):
+    class Meta:
+        verbose_name = 'Product Category'
+        verbose_name_plural = 'Product Category'
+
+    product_category_paragraph = models.CharField(
+        max_length=200, blank=True)
+    product_category_box_head = models.CharField(max_length=150)
+    product_category_box_text = models.CharField(max_length=200)
+    product_category_box_carousel = models.ImageField(blank=False)
+
+    def __str__(self):
+        return self.product_category_box_head
+
 # agent class here
+
+
 class Agent(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
