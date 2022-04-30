@@ -75,9 +75,23 @@ class TrendyProducts(models.Model):
     trendy_products_sale = models.CharField(max_length=80, blank=True)
     trendy_products_image = models.ImageField(blank=False)
     organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    trendy_category = models.ForeignKey(
+        'TrendyProductsCategory', null=True, blank=False, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.trendy_products_type
+
+
+class TrendyProductsCategory(models.Model):
+    class Meta:
+        verbose_name = 'Trendy Category'
+        verbose_name_plural = 'Trendy Category'
+
+    trendy_products_category = models.CharField(max_length=100)
+    organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.trendy_products_category
 
 
 class ProductSingleCategory(models.Model):
