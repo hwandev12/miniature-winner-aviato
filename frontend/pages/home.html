@@ -40,14 +40,13 @@
   {% endfor %}
 </div>
 
+{% for category in category %}
 <section class="product-category section">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="title text-center">
-          {% for product in products %}
-          <h2>{{ product.product_category_paragraph }}</h2>
-          {% endfor %}
+          <h2>{{ category.category_name }}</h2>
         </div>
       </div>
       {% for iamge in products %}
@@ -69,6 +68,7 @@
     </div>
   </div>
 </section>
+{% endfor %}
 
 <section class="products section bg-gray">
   <div class="container">
