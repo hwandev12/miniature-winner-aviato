@@ -23,6 +23,7 @@ class HomeView(ListView):
         context['categories'] = ProductSingleCategory.objects.all()
         context['trendy_products'] = TrendyProducts.objects.all()
         context['trendy_products_categories'] = TrendyProductsCategory.objects.all()
+        context['subscribe_newspapers'] = SubscribeNewpaperModel.objects.all()
         return context
 
 
