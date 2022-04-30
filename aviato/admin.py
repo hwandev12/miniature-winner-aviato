@@ -8,6 +8,7 @@ from .models import (
     ProductSingleCategory,
     TrendyProducts,
     TrendyProductsCategory,
+    SubscribeNewpaperModel,
     User
 )
 
@@ -22,6 +23,8 @@ admin.site.register(ProductSingleCategory)
 # import trendy products
 admin.site.register(TrendyProducts)
 admin.site.register(TrendyProductsCategory)
+# import subscribe newpaper
+admin.site.register(SubscribeNewpaperModel)
 
 
 # import basic agent and userprofiles
