@@ -155,18 +155,20 @@ Start Call To Action
 <!-- End section -->
 {% endfor %}
 
-{% for instagram in instagram_social %}
+{% for instagram_category in instagram_model_category %}
 <section class="section instagram-feed">
   <div class="container">
     <div class="row">
       <div class="title">
-        <h2>{{ instagram.isntagram_header }}</h2>
+        <h2>{{ instagram_category.instagram_category_name }}</h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
+      {% for instagram in instagram_social %}
+      <div class="col-3">
         <img src="{{ instagram.instagram_view_image.url }}" alt="">
       </div>
+      {% endfor %}
     </div>
   </div>
 </section>
