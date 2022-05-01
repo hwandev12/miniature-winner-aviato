@@ -82,28 +82,46 @@ class TrendyProducts(models.Model):
         return self.trendy_products_type
 
 # subscribe newspaper model
+
+
 class SubscribeNewpaperModel(models.Model):
     class Meta:
         verbose_name = 'Subscribe Newspaper'
         verbose_name_plural = 'Subscribe Newspaper'
-        
+
     subscribe_newspaper_header = models.CharField(max_length=200, blank=True)
     subscribe_newspaper_text = models.TextField(max_length=350, blank=True)
-    
+
     def __str__(self):
         return self.subscribe_newspaper_header
-    
+
 # view instagram model
+
+
 class InstagramSocialModel(models.Model):
     class Meta:
         verbose_name = 'Instagram View'
         verbose_name_plural = 'Instagram View'
 
     instagram_view_image = models.ImageField(blank=True)
+    instagram_category = models.ForeignKey(
+        'InstagramCategoryModel', blank=False, null=True, on_delete=models.SET_NULL)
+    organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.instagram_category)
+
+# create instagram category model
+class InstagramCategoryModel(models.Model):
+    class Meta:
+        verbose_name = 'Instagram Category'
+        verbose_name = 'Instagram Category'
+        
+    instagram_category_name = models.CharField(max_length=200)
+    organiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.isntagram_header
-
+        return self.instagram_category_name
 
 class TrendyProductsCategory(models.Model):
     class Meta:
