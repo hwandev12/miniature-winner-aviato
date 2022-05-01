@@ -81,7 +81,7 @@ class TrendyProducts(models.Model):
     def __str__(self):
         return self.trendy_products_type
 
-
+# subscribe newspaper model
 class SubscribeNewpaperModel(models.Model):
     class Meta:
         verbose_name = 'Subscribe Newspaper'
@@ -92,6 +92,18 @@ class SubscribeNewpaperModel(models.Model):
     
     def __str__(self):
         return self.subscribe_newspaper_header
+    
+# view instagram model
+class InstagramSocialModel(models.Model):
+    class Meta:
+        verbose_name = 'Instagram View'
+        verbose_name_plural = 'Instagram View'
+
+    instagram_view_image = models.ImageField(blank=True)
+    
+    def __str__(self):
+        return self.isntagram_header
+
 
 class TrendyProductsCategory(models.Model):
     class Meta:
