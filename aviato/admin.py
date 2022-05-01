@@ -9,6 +9,7 @@ from .models import (
     TrendyProducts,
     TrendyProductsCategory,
     SubscribeNewpaperModel,
+    InstagramSocialModel,
     User
 )
 
@@ -25,6 +26,8 @@ admin.site.register(TrendyProducts)
 admin.site.register(TrendyProductsCategory)
 # import subscribe newpaper
 admin.site.register(SubscribeNewpaperModel)
+# import social instagarm model
+admin.site.register(InstagramSocialModel)
 
 
 # import basic agent and userprofiles
