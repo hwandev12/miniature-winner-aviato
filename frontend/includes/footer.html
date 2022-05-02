@@ -1,6 +1,7 @@
 {% load static %}
 <footer class="footer section text-center">
   <div class="container">
+    {% for footer in footer_sections %}
     <div class="row">
       <div class="col-md-12">
         <ul class="social-media">
@@ -39,8 +40,11 @@
             <a href="contact.html">PRIVACY POLICY</a>
           </li>
         </ul>
-        <p class="copyright-text">Copyright &copy;2021, Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></p>
+        <p class="copyright-text">
+          {{ footer.footer_copyright }}
+        </p>
       </div>
     </div>
+    {% endfor %}
   </div>
 </footer>
