@@ -26,6 +26,7 @@ class HomeView(ListView):
         context['subscribe_newspapers'] = SubscribeNewpaperModel.objects.all()
         context['instagram_social'] = InstagramSocialModel.objects.all()
         context['instagram_model_category'] = InstagramCategoryModel.objects.all()
+        context['footer_sections'] = FooterModel.objects.all()
         return context
 
 
