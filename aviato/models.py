@@ -110,6 +110,18 @@ class InstagramSocialModel(models.Model):
 
     def __str__(self):
         return str(self.instagram_category)
+    
+    
+# create footer section
+class FooterModel(models.Model):
+    class Meta:
+        verbose_name = 'Footer'
+        verbose_name = 'Footer'
+        
+    footer_copyright = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return str(self.footer_copyright)
 
 # create instagram category model
 class InstagramCategoryModel(models.Model):
