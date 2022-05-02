@@ -11,6 +11,7 @@ from .models import (
     SubscribeNewpaperModel,
     InstagramSocialModel,
     InstagramCategoryModel,
+    FooterModel,
     User
 )
 
@@ -30,8 +31,8 @@ admin.site.register(SubscribeNewpaperModel)
 # import social instagarm model
 admin.site.register(InstagramSocialModel)
 admin.site.register(InstagramCategoryModel)
-
-
+# import Footer section
+admin.site.register(FooterModel)
 # import basic agent and userprofiles
 admin.site.register(UserProfile)
 admin.site.register(Agent)
