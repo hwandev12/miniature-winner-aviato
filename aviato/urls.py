@@ -4,7 +4,8 @@ from .views import (
     BlogPageView,
     AboutPageView,
     DashboardPageView,
-    OrdersPageView
+    OrdersPageView,
+    ShopPageView
 )
 app_name = 'aviato'
 
@@ -13,5 +14,6 @@ urlpatterns = [
     path('blog-info/', BlogPageView.as_view(), name='blog'),
     path('about/', AboutPageView.as_view(), name='about'),
     path('dashboard/', DashboardPageView.as_view(), name='dashboard'),
-    path('orders/', OrdersPageView.as_view(), name='order')
+    path('orders/', OrdersPageView.as_view(), name='order'),
+    path('shopping-cards/', ShopPageView.as_view(), name='shop'),
 ]
