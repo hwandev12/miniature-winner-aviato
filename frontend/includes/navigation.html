@@ -1,5 +1,4 @@
 {% load static %}
-<!-- Start Top Header Bar -->
 <style media="screen">
   .dropdown-toggle::after {
     display: none;
@@ -12,7 +11,7 @@
         {% for number in logos %}
         <div class="contact-number">
           <i class="tf-ion-ios-telephone"></i>
-          <span>{{ number.phone }}</span>
+          <span>+{{ number.phone }}</span>
         </div>
         {% endfor %}
       </div>
@@ -77,8 +76,8 @@
                 <span class="total-price">$1799.00</span>
               </div>
               <ul class="text-center cart-buttons">
-                <li><a href="cart.html" class="btn btn-small">View Cart</a></li>
-                <li><a href="checkout.html" class="btn btn-small btn-solid-border">Checkout</a></li>
+                <li><a href="#" class="btn btn-small">View Cart</a></li>
+                <li><a href="#" class="btn btn-small btn-solid-border">Checkout</a></li>
               </ul>
             </div>
 
@@ -144,7 +143,7 @@
                   <ul>
                     <li class="dropdown-header">Pages</li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="{% url 'aviato:shop' %}">Shop</a></li>
                     <li><a href="checkout.html">Checkout</a></li>
                     <li><a href="cart.html">Cart</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
