@@ -44,3 +44,14 @@ class DashboardPageView(TemplateView):
 
 class OrdersPageView(TemplateView):
     template_name = 'pages/orders.html'
+    
+class ShopPageView(ListView):
+    template_name = 'pages/shop.html'
+    
+    def get_queryset(self):
+        return TrendyProducts.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(ShopPageView, self).get_context_data(**kwargs)
+        context['trendy_products'] = TrendyProducts.objects.all()
+        return context
